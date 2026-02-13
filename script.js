@@ -13,7 +13,12 @@ nameEl.textContent = herName;
 
 let holdTimer;
 
-// Create floating hearts inside card
+// Ensure initial state
+envelope.style.display = "block";
+card.style.display = "none";
+finalScreen.style.display = "none";
+
+// Create floating hearts
 for(let i=0;i<20;i++){
   const h = document.createElement("div");
   h.textContent = "💖";
@@ -33,15 +38,19 @@ envelope.addEventListener("mouseleave", () => clearTimeout(holdTimer));
 function openEnvelope() {
   envelope.classList.add("open");
   setTimeout(() => {
-    envelope.style.display = "none";
+    envelope.style.display = "none"; // hide envelope
+    card.style.display = "block";    // show card
     card.classList.remove("hidden");
   }, 900);
 }
 
-// YES button click
+// YES button
 yesBtn.addEventListener("click", () => {
+  card.style.display = "none";       
   card.classList.add("hidden");
+  finalScreen.style.display = "flex"; 
   finalScreen.classList.remove("hidden");
+
   typeText(`I Love You, ${herName} 💖`);
   explodeConfetti();
   setTimeout(confettiRain, 1200);
