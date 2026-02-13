@@ -11,7 +11,7 @@
 <div id="app">
 
   <!-- ENVELOPE -->
-  <div id="envelope" class="closed">
+  <div id="envelope" class="closed" style="display:block;">
     <div class="flap"></div>
     <div class="body">
       <p class="hint">Tap & hold 💌</p>
@@ -19,12 +19,10 @@
   </div>
 
   <!-- CARD -->
-  <div id="card" class="hidden">
-    <div class="floating-hearts"></div> <!-- Floating hearts -->
-
+  <div id="card" class="hidden" style="display:none;">
+    <div class="floating-hearts"></div>
     <h1 id="name"></h1>
     <p class="question">Will you be my Valentine? 💕</p>
-
     <div class="buttons">
       <button id="yesBtn">YES 💖</button>
       <button id="noBtn" disabled>NO 🙃</button>
@@ -32,7 +30,7 @@
   </div>
 
   <!-- FINAL SCREEN -->
-  <div id="final" class="hidden">
+  <div id="final" class="hidden" style="display:none;">
     <h1 id="typing"></h1>
     <p class="custom">You make my world beautiful 🌸</p>
     <div id="confetti"></div>
